@@ -2,10 +2,12 @@
 //   echo 'Hello World!!!'
 //}
 // This shows a simple build wrapper example, using the Timestamper plugin.
+Random random = new Random();
+
 node {
     // Adds timestamps to the output logged by steps inside the wrapper.
     stage('AutoTriggerGithubPull') {
-        echo "Hey, look, ned code has committed to SCM!!! Let's start"
+        echo "Hey, look, some code has committed to SCM!!! Let's start"
 	sleep random.nextInt(14) + 2;
     }
 
