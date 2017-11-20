@@ -6,7 +6,7 @@ node {
     // Adds timestamps to the output logged by steps inside the wrapper.
     stage('AutoTriggerGithubPull') {
         echo "Hey, look, ned code has committed to SCM!!! Let's start"
-	sleep 2
+	sleep random.nextInt(14) + 2;
     }
 
     stage('Build') {
