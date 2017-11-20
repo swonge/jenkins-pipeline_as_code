@@ -1,0 +1,68 @@
+//node {
+//   echo 'Hello World!!!'
+//}
+// This shows a simple build wrapper example, using the Timestamper plugin.
+node {
+    // Adds timestamps to the output logged by steps inside the wrapper.
+    stage('AutoTriggerGithubPull') {
+        echo "Hey, look, ned code has committed to SCM!!! Let's start"
+	sleep 2
+    }
+
+    stage('Build') {
+        echo "Build from application code"
+	sleep 5
+    }
+    
+    stage('Package') {
+        echo "Let's package build code together in deployable format!!!"
+	sleep 5
+    }
+
+    stage('Code scan') {
+        echo "Let's run codescan"
+	sleep 2
+    }
+
+    stage('Unit Testing') {
+        echo "Let's run unit test"
+	sleep 2
+    }
+
+    stage('freeze_package') {
+        echo "Let's freeze the package"
+	echo "Upload package to Artifactory/Nexus"
+	sleep 5
+    }
+
+    stage('deploy to Dev') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep 5
+    }
+
+    stage('Run Test Case - DEV') {
+       	echo "Let's run test case for Dev"
+	sleep 5
+    }
+
+    stage('deploy to Staging') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep 5
+    }
+
+    stage('Run Test Case - Staging') {
+       	echo "Let's run test case for Staging"
+	sleep 5
+    }
+
+    stage('deploy to Prod') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep 5
+    }
+
+    stage('Run Test Case - Prod') {
+       	echo "Let's run Verification for Production"
+	sleep 5
+    }
+
+}
