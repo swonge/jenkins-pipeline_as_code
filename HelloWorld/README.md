@@ -1,2 +1,2 @@
-# jenkins-pipeline_as_code
-This is a very simple example to illustrate how Pipeline as a code using Jenkinsfile
+# Synopsis	
+Demonstrate the simplest example of Jenkinsfile to by showing "HelloWorld" in Jenkins build pipeline
