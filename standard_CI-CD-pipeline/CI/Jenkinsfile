@@ -1,0 +1,39 @@
+//node {
+//   echo 'Hello World!!!'
+//}
+// This shows a simple build wrapper example, using the Timestamper plugin.
+Random random = new Random();
+
+node {
+    // Adds timestamps to the output logged by steps inside the wrapper.
+    stage('AutoTriggerGithubPull') {
+        echo "Hey, look, some code has committed to SCM!!! Let's start"
+	sleep random.nextInt(14) + 1;
+    }
+
+    stage('Build') {
+        echo "Build from application code"
+	sleep random.nextInt(19) + 1;
+    }
+    
+    stage('Package') {
+        echo "Let's package build code together in deployable format!!!"
+	sleep random.nextInt(4) + 1;
+    }
+
+    stage('Code scan') {
+        echo "Let's run codescan"
+	sleep random.nextInt(9) + 1;
+    }
+
+    stage('Unit Testing') {
+        echo "Let's run unit test"
+	sleep 3
+    }
+
+    stage('freeze_package') {
+        echo "Let's freeze the package"
+	echo "Upload package to Artifactory/Nexus"
+	sleep random.nextInt(1) + 1;
+    }
+}

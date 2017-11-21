@@ -1,0 +1,34 @@
+Random random = new Random();
+
+node {
+    stage('deploy to Dev') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep random.nextInt(3) + 1;
+    }
+
+    stage('Run Test Case - DEV') {
+       	echo "Let's run test case for Dev"
+	sleep random.nextInt(4) + 1;
+    }
+
+    stage('deploy to Staging') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep random.nextInt(8) + 2;
+    }
+
+    stage('Run Test Case - Staging') {
+       	echo "Let's run test case for Staging"
+	sleep random.nextInt(4) + 1;
+    }
+
+    stage('deploy to Prod') {
+        echo "Upload package from Artifactory/Nexus"
+	sleep random.nextInt(13) + 2;
+    }
+
+    stage('Run Test Case - Prod') {
+       	echo "Let's run Verification for Production"
+	sleep random.nextInt(4) + 1;
+    }
+
+}
