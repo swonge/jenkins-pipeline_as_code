@@ -1,2 +1,2 @@
 # Synopsis	
-This shows usage of a CI/CD Pipeline in Jenkins
+This shows usage of a CI Pipeline in Jenkins
